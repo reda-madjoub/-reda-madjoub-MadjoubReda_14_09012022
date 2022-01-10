@@ -1,4 +1,6 @@
 import React from 'react'
+import { Link } from 'react-router-dom';
+import './CurrentEmployee.css'
 
 const Employee = () => {
     return (
@@ -6,7 +8,9 @@ const Employee = () => {
             <div id="employee-div" class="container">
                 <h1>Current Employees</h1>
                 <table id="employee-table" class="display"></table>
-                <a href="index.html">Home</a>
+                <Link to='/'>
+                    <button type='button'>Home</button>
+                </Link>
             </div>
         </>
     )

@@ -1,5 +1,6 @@
 import React from 'react'
-import './Home.css'
+import { Link } from 'react-router-dom';
+import './CreateEmployee.css'
 
 const Home = () => {
     return (
@@ -8,7 +9,9 @@ const Home = () => {
             <h1>HRnet</h1>
         </div>
         <div class="container">
-            <a href="employee-list.html">View Current Employees</a>
+            <Link to='/employee-list'>
+                <button type='button'>View Current Employees</button>
+            </Link>
             <h2>Create Employee</h2>
             <form action="#" id="create-employee">
                 <label for="first-name">First Name</label>
