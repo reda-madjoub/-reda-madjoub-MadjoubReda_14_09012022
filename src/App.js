@@ -3,9 +3,9 @@ import {
   Routes,
   Route,
 } from "react-router-dom";
-import CreateEmployee from './components/CreateEmployee/CreateEmployee'
-import CurrentEmployee from './components/CurrentEmployee/CurrentEmployee'
-import Error from './components/Error/Error'
+import CreateEmployee from './pages/CreateEmployee/CreateEmployee'
+import CurrentEmployee from './pages/CurrentEmployee/CurrentEmployee'
+import Error from './pages/Error/Error'
 
 function App() {
   return (
