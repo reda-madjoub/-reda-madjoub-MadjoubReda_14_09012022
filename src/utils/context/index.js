@@ -1,38 +1,29 @@
 import { createContext, useState } from "react"
+// Create new Context
+export const Context = createContext()
+// Initial value for each form input
+export const INITIALE_STATE = {
+    firstName: '',
+    lastName: '',
+    dateOfBirth: '',
+    startDate: '',
+    street: '',
+    city: '',
+    state: '',
+    zipCode: '',
+    department: '',
+    isModalOpen: false,
+}
 
-
-export const add_employee = createContext()
-const INITIALE_STATE = [
-    {firstName: ''},
-    {lastName: ''},
-    {dateOfBirth: ''},
-    {startDate: ''},
-    {street: ''},
-    {city: ''},
-    {state: ''},
-    {zipCode: ''},
-    {department: ''},
-    {isModalOpen: false},
-]
-
-export const Provider = ({ children }) => {
-    const [employee, setEmployee] = useState(INITIALE_STATE)
-    setEmployee([
-        {firstName: ''},
-        {lastName: ''},
-        {dateOfBirth: ''},
-        {startDate: ''},
-        {street: ''},
-        {city: ''},
-        {state: ''},
-        {zipCode: ''},
-        {department: ''},
-        {isModalOpen: false},
-    ])
- 
+// Provider which will wrap all our app
+const ContextProvider = props => {
+    const [dataContext, setDataContext] = useState(INITIALE_STATE)
+    const [employeeList, setEmployeeList] = useState([])
     return (
-        <add_employee.Provider value={{ employee }}>
-            {children}
-        </add_employee.Provider>
+        <Context.Provider value={{ dataContext, setDataContext, employeeList, setEmployeeList }}>
+            {props.children}
+        </Context.Provider>
     )
 }
+
+export default ContextProvider
