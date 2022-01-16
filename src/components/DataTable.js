@@ -5,12 +5,15 @@ import {Context} from '../utils/context/index'
 
 export const DataTable = () => {
 
-    const { dataContext, setDataContext } = useContext(Context)
+    const { employeeList } = useContext(Context)
     // const {dd, mm, yyyy} = exampleData
     // console.log(dataContext.employee.map(el => el));
+    console.log(employeeList);
+    const test = employeeList.dateOfBirth
+    console.log(test);
     return (<DataTables 
                 labels={Labels} 
-                data={exampleData} 
+                data={employeeList} 
             />)
 
 }

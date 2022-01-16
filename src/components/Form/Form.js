@@ -7,12 +7,10 @@ import './Form.css'
 const Form = () => {
 
     const { dataContext, setDataContext, employeeList, setEmployeeList } = useContext(Context)
+
     const handleSubmit = (e) => {
         e.preventDefault()
-
         const newEmployee = {...dataContext}
-        console.log(employeeList);
-        console.log(dataContext);
         setDataContext({
             ...dataContext,
             isModalOpen: true,
