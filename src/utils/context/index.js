@@ -1,38 +1,34 @@
 import { createContext, useState } from "react"
 
 
-export const add_employee = createContext()
-const INITIALE_STATE = [
-    {firstName: ''},
-    {lastName: ''},
-    {dateOfBirth: ''},
-    {startDate: ''},
-    {street: ''},
-    {city: ''},
-    {state: ''},
-    {zipCode: ''},
-    {department: ''},
-    {isModalOpen: false},
-]
+export const Context = createContext()
+// export const Context = createContext({
+//     INITIALE_STATE,
+//     employee:[]
+// })
+export const INITIALE_STATE = {
+    firstName: '',
+    lastName: '',
+    dateOfBirth: '',
+    startDate: '',
+    street: '',
+    city: '',
+    state: '',
+    zipCode: '',
+    department: '',
+    isModalOpen: false,
+    // employee:[]
+}
 
-export const Provider = ({ children }) => {
-    const [employee, setEmployee] = useState(INITIALE_STATE)
-    setEmployee([
-        {firstName: ''},
-        {lastName: ''},
-        {dateOfBirth: ''},
-        {startDate: ''},
-        {street: ''},
-        {city: ''},
-        {state: ''},
-        {zipCode: ''},
-        {department: ''},
-        {isModalOpen: false},
-    ])
- 
+const ContextProvider = props => {
+    const [dataContext, setDataContext] = useState(INITIALE_STATE)
+    const [employeeList, setEmployeeList] = useState([])
+// console.log(INITIALE_STATE);
     return (
-        <add_employee.Provider value={{ employee }}>
-            {children}
-        </add_employee.Provider>
+        <Context.Provider value={{ dataContext, setDataContext, employeeList, setEmployeeList }}>
+            {props.children}
+        </Context.Provider>
     )
 }
+
+export default ContextProvider
