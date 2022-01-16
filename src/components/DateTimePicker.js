@@ -17,6 +17,7 @@ export const DateTimePicker = (props) => {
     // handle change when user select new value
     const handleChange = (e) => {
         setValue(e)
+        // depends on which component we want to create
         switch (props.name) {
             case 'birth':
                 setDataContext({
@@ -35,11 +36,5 @@ export const DateTimePicker = (props) => {
                 throw new Error()
         } 
    }
-
-
-  
-  return <DatePicker 
-          onChange={handleChange}
-          value={value}
-          />
+  return <DatePicker onChange={handleChange} value={value} />
 }

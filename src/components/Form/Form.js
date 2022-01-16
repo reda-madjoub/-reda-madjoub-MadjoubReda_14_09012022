@@ -1,13 +1,11 @@
-import React, { useContext, useState } from 'react'
+import React, { useContext } from 'react'
 import { DateTimePicker } from '../DateTimePicker'
 import { STATES, DEPARTMENTS } from '../../constant/data'
 import {Context} from '../../utils/context/index'
 import './Form.css'
 
 const Form = () => {
-
     const { dataContext, setDataContext, employeeList, setEmployeeList } = useContext(Context)
-
     const handleSubmit = (e) => {
         e.preventDefault()
         const newEmployee = {...dataContext}
@@ -16,7 +14,6 @@ const Form = () => {
             isModalOpen: true,
         })
         setEmployeeList(employeeList.concat(newEmployee))
-        console.log(employeeList);
     }
 
     return (
@@ -29,7 +26,6 @@ const Form = () => {
                 <input type="text" id="last-name" onChange={e => setDataContext({...dataContext,lastName: e.target.value})} value={dataContext.lastName}/>
 
                 <label htmlFor="date-of-birth">Date of Birth</label>
-                {/* <DateTimePickerBirth/> */}
                 <DateTimePicker name='birth'/>
 
                 <label htmlFor="start-date">Start Date</label>

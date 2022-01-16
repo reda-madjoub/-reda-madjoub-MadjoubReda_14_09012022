@@ -1,11 +1,7 @@
 import { createContext, useState } from "react"
-
-
+// Create new Context
 export const Context = createContext()
-// export const Context = createContext({
-//     INITIALE_STATE,
-//     employee:[]
-// })
+// Initial value for each form input
 export const INITIALE_STATE = {
     firstName: '',
     lastName: '',
@@ -17,13 +13,12 @@ export const INITIALE_STATE = {
     zipCode: '',
     department: '',
     isModalOpen: false,
-    // employee:[]
 }
 
+// Provider which will wrap all our app
 const ContextProvider = props => {
     const [dataContext, setDataContext] = useState(INITIALE_STATE)
     const [employeeList, setEmployeeList] = useState([])
-// console.log(INITIALE_STATE);
     return (
         <Context.Provider value={{ dataContext, setDataContext, employeeList, setEmployeeList }}>
             {props.children}

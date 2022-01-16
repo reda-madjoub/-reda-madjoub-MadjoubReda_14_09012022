@@ -7,6 +7,7 @@ import CreateEmployee from './pages/CreateEmployee/CreateEmployee'
 import CurrentEmployee from './pages/CurrentEmployee/CurrentEmployee'
 import Error from './pages/Error/Error'
 import ContextProvider from './utils/context/index'
+import './App.css'
 
 function App() {
   return (

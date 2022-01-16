@@ -8,8 +8,7 @@ const Employee = () => {
     return (
             <div id="employee-div" className="container">
                 <h1>Current Employees</h1>
-                {/* <table id="employee-table" className="display"> */}
-                    <DataTable/>
+                <DataTable/>
                 <Link to='/'>
                     <button type='button'>Home</button>
                 </Link>
