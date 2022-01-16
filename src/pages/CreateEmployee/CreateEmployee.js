@@ -5,6 +5,9 @@ import { STATES, DEPARTMENTS } from '../../constant/data';
 import './CreateEmployee.css'
 
 const CreateEmployee = () => {
+    const handleSubmit = () => {
+        // call action context to add employee
+    }
     return (
         <>
         <div className="title">
