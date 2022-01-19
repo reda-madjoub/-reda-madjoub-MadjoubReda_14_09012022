@@ -5,5 +5,7 @@ import {Context} from '../utils/context/index'
 
 export const DataTable = () => {
     const { employeeList } = useContext(Context)
-    return <DataTables labels={Labels} data={employeeList}/>
+    const val = employeeList
+    val.map(el =>delete el.isModalOpen)
+    return <DataTables labels={Labels} data={val}/>
 }
