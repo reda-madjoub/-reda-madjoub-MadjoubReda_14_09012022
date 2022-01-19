@@ -1,6 +1,6 @@
 import { useContext } from 'react'
 import DataTables from "datatables-plugin-react"
-import { Labels, exampleData } from "../constant/data"
+import { Labels } from "../constant/data"
 import {Context} from '../utils/context/index'
 
 export const DataTable = () => {
