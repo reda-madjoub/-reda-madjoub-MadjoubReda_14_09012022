@@ -3,7 +3,8 @@ import { Link } from 'react-router-dom';
 import Form from '../../components/Form/Form'
 import './CreateEmployee.css'
 // import Modal from '../../components/Modal/Modal'
-import Modal from '../../../node_modules/modale-react/dist/index'
+// import Modal from '../../../node_modules/modale-react/dist/Modal'
+import Modal from 'modale-react'
 import {Context} from '../../utils/context/index'
 
 const CreateEmployee = () => {
